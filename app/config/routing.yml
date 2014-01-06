@@ -1,0 +1,5 @@
+acme_behat:
+    resource: "@AcmeBehatBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
