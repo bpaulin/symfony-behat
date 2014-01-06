@@ -1,10 +1,13 @@
 language: php
 
 php:
-  - 5.3.3
-  - 5.3
-  - 5.4
+    - 5.4
 
-before_script: composer install -n
+before_script: 
+    - composer install -n
+    - npm install
+    - php app/console server:run &
+    - ./node_modules/.bin/phantomjs --webdriver=8643 &
 
-script: phpunit -c app
+script: 
+    - ./bin/behat --format=progress
