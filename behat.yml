@@ -2,6 +2,8 @@ default:
     extensions:
         Behat\Symfony2Extension\Extension:
             mink_driver: true
-            bundle: AcmeBehatBundle
         Behat\MinkExtension\Extension:
             default_session: 'symfony2'
+            base_url: 'http://localhost:8000'
+            selenium2:
+                wd_host: "http://localhost:8643/wd/hub"
